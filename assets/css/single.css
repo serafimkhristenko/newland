@@ -59,6 +59,12 @@ a { color: inherit; }
 .money-float--three { right: 10%; bottom: 16%; width: clamp(115px, 12vw, 165px); transform: rotate(24deg); animation-duration: 9s; animation-delay: -4.1s; }
 .money-float--four { right: 28%; bottom: 22%; width: clamp(78px, 9vw, 112px); transform: rotate(-18deg); animation-duration: 8.7s; animation-delay: -5.4s; }
 @keyframes money-float { 0%, 100% { margin-top: 0; } 50% { margin-top: -16px; } }
+.chip-float { position: absolute; z-index: 1; pointer-events: none; width: clamp(96px, 11vw, 168px); opacity: .92; filter: saturate(.92) contrast(1.04) drop-shadow(0 0 14px rgba(255, 40, 156, .48)) drop-shadow(0 12px 12px rgba(18, 5, 29, .42)); animation: chip-float 8.6s ease-in-out infinite; }
+.chip-float img { display: block; width: 100%; height: auto; }
+.chip-float--one { top: 14%; left: 1%; animation-duration: 8.8s; animation-delay: -1.2s; }
+.chip-float--two { top: 38%; left: 7%; width: clamp(72px, 8vw, 122px); animation-duration: 7.6s; animation-delay: -3.4s; }
+.chip-float--three { top: 27%; left: 31%; width: clamp(58px, 6vw, 92px); animation-duration: 9.4s; animation-delay: -5.1s; }
+@keyframes chip-float { 0%, 100% { transform: translate3d(-4px, 8px, 0) rotate(-10deg); } 50% { transform: translate3d(8px, -12px, 0) rotate(8deg); } }
 
 .brand, .footer__brand { color: #fff; font-family: Montserrat, Arial, sans-serif; font-size: 30px; font-weight: 900; letter-spacing: 0; line-height: 1; text-decoration: none; white-space: nowrap; }
 .footer__brand { font-size: 21px; }
@@ -158,6 +164,10 @@ h1 .headline-group--accent { color: var(--gold); }
   .screen--hero::before { height: 31%; background: linear-gradient(180deg, transparent, rgba(15, 6, 24, .24)); -webkit-mask-image: none; mask-image: none; }
   .screen--hero::after { background: radial-gradient(ellipse at 50% 46%, rgba(23, 13, 38, .4) 0%, rgba(23, 13, 38, .18) 46%, transparent 72%), linear-gradient(90deg, rgba(34, 15, 51, .46) 0%, rgba(41, 17, 57, .2) 72%, transparent 100%), linear-gradient(180deg, rgba(34, 16, 51, .34) 0%, transparent 48%, rgba(13, 5, 21, .24) 100%); }
   .money-float { display: none; }
+  .chip-float { width: clamp(58px, 19vw, 78px); opacity: .86; filter: saturate(.92) contrast(1.04) drop-shadow(0 0 10px rgba(255, 40, 156, .38)) drop-shadow(0 8px 10px rgba(18, 5, 29, .34)); }
+  .chip-float--one { top: 29%; right: auto; left: -16px; animation-duration: 7.4s; }
+  .chip-float--two { top: 48%; right: auto; left: -20px; width: clamp(54px, 16vw, 68px); animation-duration: 8.2s; animation-delay: -2.4s; }
+  .chip-float--three { top: 37%; right: -18px; left: auto; width: clamp(50px, 14vw, 62px); animation-duration: 9s; animation-delay: -4.8s; }
   .money-float--three, .money-float--four { display: block; z-index: 1; top: clamp(330px, 62vh, 580px); bottom: auto; width: clamp(96px, 29vw, 132px); opacity: 1; filter: saturate(.92) contrast(1.04) brightness(.96) drop-shadow(0 0 16px rgba(255, 48, 159, .42)) drop-shadow(0 14px 16px rgba(24, 8, 35, .44)); }
   .money-float--three { right: auto; left: -24px; animation: money-mobile-left 5.8s ease-in-out infinite; }
   .money-float--four { right: -24px; animation: money-mobile-right 6.4s ease-in-out -2.1s infinite; }
@@ -232,4 +242,4 @@ h1 .headline-group--accent { color: var(--gold); }
 @keyframes cta-gta-pulse { 0%, 68%, 100% { filter: drop-shadow(0 0 8px rgba(57, 236, 97, .24)) drop-shadow(0 0 18px rgba(57, 236, 97, .12)); } 82% { filter: drop-shadow(0 0 22px rgba(57, 236, 97, .72)) drop-shadow(0 0 44px rgba(57, 236, 97, .38)); } 91% { filter: drop-shadow(0 0 12px rgba(57, 236, 97, .3)); } }
 @keyframes money-mobile-left { 0%, 100% { transform: translate3d(-6px, 8px, 0) rotate(-16deg); } 50% { transform: translate3d(8px, -10px, 0) rotate(-8deg); } }
 @keyframes money-mobile-right { 0%, 100% { transform: translate3d(7px, 10px, 0) rotate(17deg); } 50% { transform: translate3d(-8px, -8px, 0) rotate(9deg); } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.skip-link, .money-float, .cta, .live-activity, .live-activity__dot { animation: none; transition: none; }.cashout-toast { transition: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.skip-link, .money-float, .chip-float, .cta, .live-activity, .live-activity__dot { animation: none; transition: none; }.cashout-toast { transition: none; } }
