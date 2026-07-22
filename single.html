@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/single.css?v=20260722-2">
+  <link rel="stylesheet" href="assets/css/single.css?v=20260722-4">
 </head>
 <body>
   <main class="casino-page">
@@ -26,8 +26,12 @@
         <a class="cta" href="#footer">Забрать <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <footer class="site-footer" id="footer">
-        <div class="footer__brand" aria-label="Покерок">ПОКЕРОК</div>
+        <div class="footer__lockup">
+          <div class="footer__brand" aria-label="Покерок">ПОКЕРОК</div>
+          <span class="footer__age">18+</span>
+        </div>
         <div class="payments" aria-label="Доступные способы оплаты">
+          <div class="payments__row payments__row--crypto">
           <img src="assets/pay/btc.svg" width="54" height="30" loading="lazy" decoding="async" alt="Bitcoin">
           <img src="assets/pay/eth.svg" width="54" height="30" loading="lazy" decoding="async" alt="Ethereum">
           <img src="assets/pay/usdt.svg" width="54" height="30" loading="lazy" decoding="async" alt="USDT">
@@ -35,6 +39,8 @@
           <img src="assets/pay/usdc.svg" width="54" height="30" loading="lazy" decoding="async" alt="USDC">
           <img src="assets/pay/polygon.svg" width="54" height="30" loading="lazy" decoding="async" alt="Polygon">
           <img src="assets/pay/bnb.svg" width="54" height="30" loading="lazy" decoding="async" alt="BNB">
+          </div>
+          <div class="payments__row payments__row--cards">
           <img src="assets/pay/skrill.svg" width="54" height="30" loading="lazy" decoding="async" alt="Skrill">
           <img src="assets/pay/neteller.svg" width="54" height="30" loading="lazy" decoding="async" alt="Neteller">
           <img src="assets/pay/luxonpay.svg" width="54" height="30" loading="lazy" decoding="async" alt="Luxon Pay">
@@ -42,8 +48,8 @@
           <img src="assets/pay/mastercard.svg" width="54" height="30" loading="lazy" decoding="async" alt="Mastercard">
           <img src="assets/pay/maestro.svg" width="54" height="30" loading="lazy" decoding="async" alt="Maestro">
           <img src="assets/pay/mir.svg" width="54" height="30" loading="lazy" decoding="async" alt="Мир">
+          </div>
         </div>
-        <span class="footer__age">18+</span>
       </footer>
     </section>
   </main>
