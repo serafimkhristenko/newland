@@ -34,8 +34,6 @@
 })();
 
 (function () {
-  if (!window.matchMedia("(max-width: 640px)").matches) return;
-
   var timer = document.querySelector("[data-bonus-timer]");
   if (!timer) return;
 
@@ -120,7 +118,7 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var players = 154475;
-  var paid = 250000000;
+  var paid = 25000000;
   var roots = [
     "LuckyAce", "NeonWolf", "RiverKing", "SpinQueen", "CryptoFox",
     "RoyalFlush", "NightOwl", "WildSeven", "TurboChip", "VegasMoon",
