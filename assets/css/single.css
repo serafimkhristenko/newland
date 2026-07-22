@@ -202,6 +202,7 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
   .hero-offer { position: relative; align-self: center; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; width: 100%; min-width: 0; margin-top: clamp(2px, 0.5vh, 5px); transform: none; }
   .hero-offer::before { position: absolute; z-index: -1; inset: -38px -16px -44px; content: ""; pointer-events: none; background: radial-gradient(ellipse at center, rgba(23, 13, 38, .42) 0%, rgba(23, 13, 38, .2) 48%, transparent 74%); }
   .amount { justify-content: center; width: 100%; min-width: 0; margin: 0; color: var(--gold); background: none; font: 900 clamp(72px, 21vw, 84px)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; text-align: center; white-space: nowrap; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
+  .amount .odo-cell { margin-inline: -0.03em; }
   .cta-row { margin-top: clamp(13px, 2vh, 18px); }
   .cta { position: relative; z-index: 2; isolation: isolate; justify-content: flex-start; align-self: center; width: min(100%, 328px); min-height: 64px; margin-top: 0; margin-bottom: 0; padding: 16px 116px 16px 70px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: clamp(18px, 4.8vw, 20px); font-weight: 900; font-synthesis: none; line-height: 1; letter-spacing: .02em; box-shadow: none; text-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
   .cta::before, .cta::after { position: absolute; inset: 0; content: ""; pointer-events: none; clip-path: none; }
@@ -260,8 +261,8 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
 /* Fixed-cell odometer: each glyph sits in an equal-width cell so the counting
    amount changes digits in place instead of wiggling in the proportional
    Pricedown display font. Cell width is measured per element in single.js. */
-.odo-cell { display: inline-block; margin-inline: -0.035em; text-align: center; }
-.odo-cell--digit { width: var(--odo-digit-width, 0.6em); }
+.odo-cell { display: inline-block; text-align: center; }
+.odo-cell--digit { width: var(--odo-digit-width, 0.62em); }
 .amount { gap: 0; }
 .h2-break { display: none; }
 @media (max-width: 640px) { .h2-break { display: inline; } }
