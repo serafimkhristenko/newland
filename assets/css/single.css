@@ -74,6 +74,11 @@ a { color: inherit; }
 .chip-float--three { top: 27%; left: 31%; width: clamp(58px, 6vw, 92px); animation-duration: 9.4s; animation-delay: -5.1s; }
 @keyframes chip-float { 0%, 100% { transform: translate3d(-4px, 8px, 0) rotate(-10deg); } 50% { transform: translate3d(8px, -12px, 0) rotate(8deg); } }
 
+@media (min-width: 1100px) {
+  .chip-float--two { top: 55%; left: 38.5%; width: clamp(124px, 7.8vw, 150px); }
+  .chip-float--three { top: 36%; left: 39%; width: clamp(104px, 6.25vw, 120px); }
+}
+
 .brand, .footer__brand { color: #fff; font-family: Montserrat, Arial, sans-serif; font-size: 30px; font-weight: 900; letter-spacing: 0; line-height: 1; text-decoration: none; white-space: nowrap; }
 .footer__brand { font-size: 21px; }
 .footer__age { display: grid; place-items: center; width: 50px; height: 50px; border: 2px solid var(--pink); border-radius: 50%; color: var(--white); background: rgba(29, 10, 40, .35); font-size: 13px; font-weight: 900; }
