@@ -92,7 +92,7 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
 .cta { position: relative; z-index: 2; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-width: 220px; min-height: 64px; margin-top: 18px; padding: 17px 30px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: 18px; font-weight: 900; font-synthesis: none; line-height: 1; letter-spacing: .02em; text-decoration: none; text-shadow: none; text-transform: uppercase; touch-action: manipulation; box-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
 .cta::before, .cta::after { position: absolute; inset: 0; content: ""; pointer-events: none; clip-path: none; }
 .cta::before { z-index: -1; background: #25d64d; transition: background .16s ease; }
-.cta::after { display: none; }
+.cta::after { z-index: -2; background: #43134f; transform: translateY(8px); }
 .cta:hover { background: transparent; transform: translateY(-1px); }.cta:hover::before { background: #39ec61; }.cta:active { animation: none; transform: translateY(3px); }
 .cta--expired { cursor: not-allowed; color: #e2d6e5; animation: none; }.cta--expired::before { background: #67606b; }.cta--expired::after { background: #29182f; }.cta--expired:hover { transform: none; }.cta--expired:hover::before { background: #67606b; }
 .cta:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
@@ -206,7 +206,7 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
   .cta { position: relative; z-index: 2; isolation: isolate; justify-content: flex-start; align-self: center; width: min(100%, 328px); min-height: 64px; margin-top: 0; margin-bottom: 0; padding: 16px 116px 16px 70px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: clamp(18px, 4.8vw, 20px); font-weight: 900; font-synthesis: none; line-height: 1; letter-spacing: .02em; box-shadow: none; text-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
   .cta::before, .cta::after { position: absolute; inset: 0; content: ""; pointer-events: none; clip-path: none; }
   .cta::before { z-index: -1; background: #25d64d; transition: background .16s ease; }
-  .cta::after { display: none; }
+  .cta::after { z-index: -2; background: #43134f; transform: translateY(8px); }
   .cta:hover { background: transparent; transform: translateY(-1px); }
   .cta:hover::before { background: #39ec61; }
   .cta:active { animation: none; transform: translateY(3px); }
@@ -252,7 +252,7 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
   .payments__row--cards img { height: 20px; }
 }
 
-@keyframes cta-gta-pulse { 0%, 68%, 100% { opacity: 1; } 82% { opacity: .94; } 91% { opacity: .98; } }
+@keyframes cta-gta-pulse { 0%, 68%, 100% { filter: drop-shadow(0 0 8px rgba(57, 236, 97, .24)) drop-shadow(0 0 18px rgba(57, 236, 97, .12)); } 82% { filter: drop-shadow(0 0 22px rgba(57, 236, 97, .72)) drop-shadow(0 0 44px rgba(57, 236, 97, .38)); } 91% { filter: drop-shadow(0 0 12px rgba(57, 236, 97, .3)); } }
 @keyframes money-mobile-left { 0%, 100% { transform: translate3d(-6px, 8px, 0) rotate(-16deg); } 50% { transform: translate3d(8px, -10px, 0) rotate(-8deg); } }
 @keyframes money-mobile-right { 0%, 100% { transform: translate3d(7px, 10px, 0) rotate(17deg); } 50% { transform: translate3d(-8px, -8px, 0) rotate(9deg); } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.skip-link, .money-float, .chip-float, .cta, .live-activity, .live-activity__dot { animation: none; transition: none; }.cashout-toast { transition: none; } }
