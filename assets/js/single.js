@@ -6,6 +6,21 @@
   var duration = 6500;
   var startedAt = null;
 
+  function lockAmountWidths() {
+    amounts.forEach(function (amount) {
+      if (!amount.getClientRects().length) return;
+
+      var targetValue = "$" + Math.round(Number(amount.dataset.countTo));
+      amount.textContent = targetValue;
+      var width = Math.ceil(amount.getBoundingClientRect().width);
+
+      amount.style.width = width + "px";
+      amount.style.minWidth = width + "px";
+      amount.style.flexBasis = width + "px";
+      amount.textContent = "$0";
+    });
+  }
+
   function render(value) {
     amounts.forEach(function (amount) {
       amount.textContent = "$" + Math.round(value);
@@ -31,6 +46,7 @@
     }
   }
 
+  lockAmountWidths();
   render(0);
   window.requestAnimationFrame(animate);
 })();
