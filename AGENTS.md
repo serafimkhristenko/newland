@@ -16,7 +16,8 @@
 
 ## Brand and implementation conventions
 
-- Preserve the GTA-inspired casino art direction, condensed uppercase display typography, gold secondary emphasis, and lime as the only CTA accent.
+- Preserve the GTA-inspired casino art direction, gold secondary emphasis, and lime as the only CTA accent.
+- The H1 display stack is intentionally `Barlow Condensed Local`, `Barlow Condensed`, then `Impact`. Its narrow Cyrillic fallback is part of the approved visual and must not be replaced with Roboto Condensed.
 - Keep offer text as live HTML, never baked into raster art.
 - Mobile decorative assets must not compete with the offer or cause avoidable above-the-fold downloads.
 - Maintain visible keyboard focus, at least 44×44px touch targets, safe-area padding, and `prefers-reduced-motion` behavior.
