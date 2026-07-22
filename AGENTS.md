@@ -17,7 +17,7 @@
 ## Brand and implementation conventions
 
 - Preserve the GTA-inspired casino art direction, gold secondary emphasis, and lime as the only CTA accent.
-- The approved H1 is the original PC rendering from commit `24ab1a4`: `Impact` first, without `font-synthesis` or text stroke. Do not place Barlow or Roboto Condensed before it.
+- The approved desktop H1 is the original PC rendering from commit `24ab1a4`: `Impact` first, without `font-synthesis` or text stroke. On mobile, use the bundled `Roboto Condensed Local` Cyrillic face with the same heavy condensed treatment so the appearance stays stable on devices without system Impact.
 - Keep offer text as live HTML, never baked into raster art.
 - Mobile decorative assets must not compete with the offer or cause avoidable above-the-fold downloads.
 - Maintain visible keyboard focus, at least 44×44px touch targets, safe-area padding, and `prefers-reduced-motion` behavior.
