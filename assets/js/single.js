@@ -102,6 +102,15 @@
 })();
 
 (function () {
+  var preview = new URLSearchParams(window.location.search).get("preview") === "client";
+  if (preview) {
+    document.documentElement.classList.add("client-preview");
+    var activity = document.querySelector("[data-live-activity]");
+    if (activity) activity.setAttribute("aria-label", "Показатели активности игроков");
+  }
+})();
+
+(function () {
   var playersElement = document.querySelector("[data-live-players]");
   var paidElement = document.querySelector("[data-live-paid]");
   var toast = document.querySelector("[data-cashout-toast]");
