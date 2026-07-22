@@ -16,7 +16,9 @@
 
       amount.style.width = width + "px";
       amount.style.minWidth = width + "px";
-      amount.style.flexBasis = width + "px";
+      if (amount.classList.contains("cta__amount")) {
+        amount.style.flexBasis = width + "px";
+      }
       amount.textContent = "$0";
     });
   }
