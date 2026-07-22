@@ -44,7 +44,7 @@
   var ctaLabel = cta ? cta.querySelector(".cta__label") : null;
   var ctaAmount = cta ? cta.querySelector(".cta__amount") : null;
   var storageKey = "newland-bonus-expires-at";
-  var duration = 2 * 60 * 1000;
+  var duration = (3 * 60 + 33) * 1000;
   var expiresAt = 0;
   var intervalId = null;
 
