@@ -84,18 +84,18 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
 .hero-copy h2 { max-width: 500px; margin: 28px 0 6px; color: var(--white); font-family: Montserrat, Arial, sans-serif; font-size: clamp(15px, 1.8vw, 21px); font-weight: 800; font-synthesis: none; line-height: 1.25; letter-spacing: .005em; }
 .hero-copy h2 strong { color: var(--gold); font-weight: 900; }
 .amount { display: flex; align-items: baseline; gap: 9px; margin: 0; color: var(--white); font: 900 clamp(74px, 10vw, 138px)/.9 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: 0; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
-.cta { position: relative; z-index: 2; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-width: 220px; min-height: 64px; margin-top: 18px; padding: 17px 30px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: 18px; font-weight: 900; font-synthesis: none; line-height: 1; letter-spacing: .02em; text-decoration: none; text-shadow: -1px -1px 0 #2d1038, 1px -1px 0 #2d1038, -1px 1px 0 #2d1038, 1px 1px 0 #2d1038, 3px 3px 0 #d63d99; text-transform: uppercase; touch-action: manipulation; box-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
+.cta { position: relative; z-index: 2; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-width: 220px; min-height: 64px; margin-top: 18px; padding: 17px 30px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: 18px; font-weight: 900; font-synthesis: none; line-height: 1; letter-spacing: .02em; text-decoration: none; text-shadow: none; text-transform: uppercase; touch-action: manipulation; box-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
 .cta::before, .cta::after { position: absolute; inset: 0; content: ""; pointer-events: none; clip-path: none; }
 .cta::before { z-index: -1; background: #25d64d; transition: background .16s ease; }
-.cta::after { z-index: -2; background: #43134f; transform: translateY(8px); }
+.cta::after { display: none; }
 .cta:hover { background: transparent; transform: translateY(-1px); }.cta:hover::before { background: #39ec61; }.cta:active { animation: none; transform: translateY(3px); }
 .cta--expired { cursor: not-allowed; color: #e2d6e5; animation: none; }.cta--expired::before { background: #67606b; }.cta--expired::after { background: #29182f; }.cta--expired:hover { transform: none; }.cta--expired:hover::before { background: #67606b; }
 .cta:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .cta svg { display: none; }
 .cta__label { flex: 0 0 auto; font: 900 clamp(22px, 2.5vw, 36px)/1 "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-synthesis: none; }
-.cta__amount { flex: 0 0 auto; color: var(--gold); font: 900 clamp(74px, 10vw, 138px)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
+.cta__amount { flex: 0 0 auto; color: var(--gold); font: 900 clamp(74px, 10vw, 138px)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: none; }
 .cta-row { position: relative; display: flex; align-items: stretch; justify-content: center; width: 100%; }
-.cta__timer { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 68px; padding: 7px 10px 8px; color: var(--gold); background: transparent; clip-path: none; box-shadow: none; text-shadow: 2px 2px 0 #8e225f; pointer-events: none; }
+.cta__timer { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 68px; padding: 7px 10px 8px; color: var(--gold); background: transparent; clip-path: none; box-shadow: none; text-shadow: none; pointer-events: none; }
 .cta__timer time { font: 400 24px/1 "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: .04em; }
 .cta__timer--expired { color: #ffd2df; background: transparent; }
 @keyframes cta-pulse { 50% { box-shadow: 0 8px 0 #819b1b, 0 15px 42px rgba(212, 255, 74, .42); } }
@@ -138,10 +138,10 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
   .cta-stack .cta-row { display: grid; grid-template-columns: minmax(0, 1fr) 110px; gap: 12px; align-items: stretch; }
   .cta-stack .cta { --cta-amount-size: clamp(54px, 6.15vw, 88px); --cta-label-size: clamp(48px, 5.45vw, 78px); width: 100%; min-width: 0; height: clamp(116px, 9vw, 138px); margin-top: 0; padding: 20px clamp(20px, 2.8vw, 36px) 24px; gap: clamp(14px, 1.6vw, 22px); }
   .cta-stack .cta::before, .cta-stack .cta::after { clip-path: none; }
-  .cta-stack .cta::before { background: linear-gradient(135deg, #31e75a 0%, #20cf48 72%, #18ba3c 100%); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .24), inset 0 -4px 0 rgba(10, 103, 39, .24); }
+  .cta-stack .cta::before { background: linear-gradient(135deg, #31e75a 0%, #20cf48 72%, #18ba3c 100%); box-shadow: none; }
   .cta-stack .cta::after { transform: translateY(6px); }
   .cta-stack .cta__label { font: 900 var(--cta-label-size)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: -.025em; -webkit-text-stroke: 10px #050307; paint-order: stroke fill; }
-  .cta-stack .cta__amount { width: 2.65em; min-width: 2.65em; font-size: var(--cta-amount-size); line-height: .8; text-align: center; -webkit-text-stroke: 10px #050307; paint-order: stroke fill; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
+  .cta-stack .cta__amount { width: 2.65em; min-width: 2.65em; font-size: var(--cta-amount-size); line-height: .8; text-align: center; -webkit-text-stroke: 10px #050307; paint-order: stroke fill; text-shadow: none; }
   .cta-stack .cta__timer { width: 100%; min-width: 0; height: 100%; padding: 12px; background: transparent; clip-path: none; box-shadow: none; filter: none; }
   .cta-stack .cta__timer time { font-size: clamp(36px, 2.8vw, 40px); }
   .cta-stack .cta svg { display: none; }
@@ -198,10 +198,10 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
   .hero-offer::before { position: absolute; z-index: -1; inset: -38px -16px -44px; content: ""; pointer-events: none; background: radial-gradient(ellipse at center, rgba(23, 13, 38, .42) 0%, rgba(23, 13, 38, .2) 48%, transparent 74%); }
   .amount { justify-content: center; width: 100%; min-width: 0; margin: 0; color: var(--gold); background: none; font: 900 clamp(84px, 26vw, 110px)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; text-align: center; white-space: nowrap; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
   .cta-row { margin-top: clamp(13px, 2vh, 18px); }
-  .cta { position: relative; z-index: 2; isolation: isolate; justify-content: flex-start; align-self: center; width: min(100%, 328px); min-height: 64px; margin-top: 0; margin-bottom: 0; padding: 16px 116px 16px 70px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: clamp(18px, 4.8vw, 20px); font-weight: 400; font-synthesis: none; line-height: 1; letter-spacing: .02em; box-shadow: none; text-shadow: -1px -1px 0 #2d1038, 1px -1px 0 #2d1038, -1px 1px 0 #2d1038, 1px 1px 0 #2d1038, 3px 3px 0 #d63d99; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
+  .cta { position: relative; z-index: 2; isolation: isolate; justify-content: flex-start; align-self: center; width: min(100%, 328px); min-height: 64px; margin-top: 0; margin-bottom: 0; padding: 16px 116px 16px 70px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: clamp(18px, 4.8vw, 20px); font-weight: 900; font-synthesis: none; line-height: 1; letter-spacing: .02em; box-shadow: none; text-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
   .cta::before, .cta::after { position: absolute; inset: 0; content: ""; pointer-events: none; clip-path: none; }
   .cta::before { z-index: -1; background: #25d64d; transition: background .16s ease; }
-  .cta::after { z-index: -2; background: #43134f; transform: translateY(8px); }
+  .cta::after { display: none; }
   .cta:hover { background: transparent; transform: translateY(-1px); }
   .cta:hover::before { background: #39ec61; }
   .cta:active { animation: none; transform: translateY(3px); }
@@ -247,7 +247,7 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
   .payments__row--cards img { height: 20px; }
 }
 
-@keyframes cta-gta-pulse { 0%, 68%, 100% { filter: drop-shadow(0 0 8px rgba(57, 236, 97, .24)) drop-shadow(0 0 18px rgba(57, 236, 97, .12)); } 82% { filter: drop-shadow(0 0 22px rgba(57, 236, 97, .72)) drop-shadow(0 0 44px rgba(57, 236, 97, .38)); } 91% { filter: drop-shadow(0 0 12px rgba(57, 236, 97, .3)); } }
+@keyframes cta-gta-pulse { 0%, 68%, 100% { opacity: 1; } 82% { opacity: .94; } 91% { opacity: .98; } }
 @keyframes money-mobile-left { 0%, 100% { transform: translate3d(-6px, 8px, 0) rotate(-16deg); } 50% { transform: translate3d(8px, -10px, 0) rotate(-8deg); } }
 @keyframes money-mobile-right { 0%, 100% { transform: translate3d(7px, 10px, 0) rotate(17deg); } 50% { transform: translate3d(-8px, -8px, 0) rotate(9deg); } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.skip-link, .money-float, .chip-float, .cta, .live-activity, .live-activity__dot { animation: none; transition: none; }.cashout-toast { transition: none; } }
