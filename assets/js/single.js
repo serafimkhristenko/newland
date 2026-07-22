@@ -1,13 +1,15 @@
 (function () {
-  var amount = document.querySelector("[data-count-to]");
-  if (!amount) return;
+  var amounts = Array.prototype.slice.call(document.querySelectorAll("[data-count-to]"));
+  if (!amounts.length) return;
 
-  var target = Number(amount.dataset.countTo);
+  var target = Number(amounts[0].dataset.countTo);
   var duration = 4500;
   var startedAt = null;
 
   function render(value) {
-    amount.textContent = "$" + Math.round(value);
+    amounts.forEach(function (amount) {
+      amount.textContent = "$" + Math.round(value);
+    });
   }
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -41,6 +43,7 @@
   var timerValue = timer.querySelector("[data-timer-value]");
   var cta = document.querySelector(".cta");
   var ctaLabel = cta ? cta.querySelector(".cta__label") : null;
+  var ctaAmount = cta ? cta.querySelector(".cta__amount") : null;
   var storageKey = "newland-bonus-expires-at";
   var duration = 2 * 60 * 1000;
   var expiresAt = 0;
@@ -71,6 +74,7 @@
     }
 
     if (ctaLabel) ctaLabel.textContent = "Бонус сгорел";
+    if (ctaAmount) ctaAmount.hidden = true;
     if (intervalId !== null) window.clearInterval(intervalId);
   }
 
