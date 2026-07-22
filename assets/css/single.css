@@ -78,7 +78,8 @@ h1 .headline-group--accent { color: var(--gold); }
 .cta svg { width: 21px; height: 21px; filter: drop-shadow(2px 2px 0 #d63d99); }
 .cta__label { flex: 0 0 auto; font: 400 clamp(22px, 2.5vw, 36px)/1 "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-synthesis: none; }
 .cta__amount { flex: 0 0 auto; color: #ffe477; font: 400 clamp(74px, 10vw, 138px)/.8 "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; -webkit-text-fill-color: #ffe477; -webkit-text-stroke: 2px #4b174f; text-shadow: 5px 6px 0 #ca3a91, 0 10px 25px rgba(19, 7, 28, .68); }
-.cta__timer { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 68px; padding: 7px 10px 8px; color: var(--gold); background: rgba(55, 16, 65, .9); clip-path: polygon(5% 0, 100% 8%, 95% 100%, 0 92%); box-shadow: 0 4px 0 rgba(196, 50, 139, .58); text-shadow: 2px 2px 0 #8e225f; }
+.cta-row { position: relative; display: flex; align-items: stretch; justify-content: center; width: 100%; }
+.cta__timer { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 68px; padding: 7px 10px 8px; color: var(--gold); background: rgba(55, 16, 65, .9); clip-path: polygon(5% 0, 100% 8%, 95% 100%, 0 92%); box-shadow: 0 4px 0 rgba(196, 50, 139, .58); text-shadow: 2px 2px 0 #8e225f; pointer-events: none; }
 .cta__timer time { font: 400 24px/1 "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: .04em; }
 .cta__timer--expired { color: #ffd2df; background: rgba(78, 24, 48, .9); }
 @keyframes cta-pulse { 50% { box-shadow: 0 8px 0 #819b1b, 0 15px 42px rgba(212, 255, 74, .42); } }
@@ -116,14 +117,15 @@ h1 .headline-group--accent { color: var(--gold); }
   .hero-offer { display: grid; grid-template-columns: minmax(0, 840px); grid-template-areas: "action"; align-items: start; width: min(840px, 100%); }
   .amount { display: none; }
   .cta-stack { grid-area: action; align-self: start; width: 100%; }
-  .cta-stack .cta { --cta-display-size: clamp(58px, 7vw, 102px); width: 100%; min-width: 0; height: clamp(116px, 9vw, 138px); margin-top: 0; padding: 20px clamp(24px, 3.4vw, 46px) 24px; gap: clamp(18px, 2vw, 28px); filter: drop-shadow(0 13px 0 rgba(67, 19, 79, .84)) drop-shadow(0 22px 32px rgba(18, 6, 27, .34)); }
+  .cta-stack .cta-row { display: grid; grid-template-columns: minmax(0, 1fr) clamp(106px, 9vw, 132px); gap: 14px; align-items: stretch; }
+  .cta-stack .cta { --cta-display-size: clamp(54px, 6.15vw, 88px); width: 100%; min-width: 0; height: clamp(116px, 9vw, 138px); margin-top: 0; padding: 20px clamp(20px, 2.8vw, 36px) 24px; gap: clamp(14px, 1.6vw, 22px); }
   .cta-stack .cta::before, .cta-stack .cta::after { clip-path: polygon(2.5% 0, 100% 6%, 97.5% 100%, 0 94%); }
   .cta-stack .cta::before { background: linear-gradient(135deg, #31e75a 0%, #20cf48 72%, #18ba3c 100%); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .24), inset 0 -4px 0 rgba(10, 103, 39, .24); }
   .cta-stack .cta::after { transform: translateY(6px); }
   .cta-stack .cta__label { font: 400 var(--cta-display-size)/.8 "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: -.025em; }
-  .cta-stack .cta__amount { font-size: var(--cta-display-size); line-height: .8; -webkit-text-stroke-width: 1.6px; text-shadow: 4px 5px 0 #ca3a91, 0 9px 22px rgba(19, 7, 28, .56); }
-  .cta-stack .cta__timer { min-width: 76px; padding: 8px 11px 9px; }
-  .cta-stack .cta__timer time { font-size: clamp(24px, 2.2vw, 32px); }
+  .cta-stack .cta__amount { width: 2.65em; min-width: 2.65em; font-size: var(--cta-display-size); line-height: .8; text-align: center; -webkit-text-stroke-width: 1.6px; text-shadow: 4px 5px 0 #ca3a91, 0 9px 22px rgba(19, 7, 28, .56); }
+  .cta-stack .cta__timer { width: 100%; min-width: 0; height: 100%; padding: 12px; background: linear-gradient(145deg, rgba(72, 20, 82, .96), rgba(39, 12, 51, .96)); clip-path: polygon(8% 0, 100% 6%, 94% 100%, 0 94%); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .12), inset 0 -4px 0 rgba(16, 5, 25, .32); filter: drop-shadow(0 8px 0 rgba(67, 19, 79, .84)) drop-shadow(0 18px 25px rgba(18, 6, 27, .34)); }
+  .cta-stack .cta__timer time { font-size: clamp(34px, 3.4vw, 48px); }
   .cta-stack .cta svg { display: none; }
   .cta-stack .trust-proof { align-self: center; width: max-content; margin-top: 12px; }
 }
@@ -164,16 +166,17 @@ h1 .headline-group--accent { color: var(--gold); }
   .hero-offer { position: relative; align-self: center; display: flex; flex-direction: column; align-items: center; width: 100%; min-width: 0; margin-top: clamp(10px, 1.5vh, 14px); transform: none; }
   .hero-offer::before { position: absolute; z-index: -1; inset: -38px -16px -44px; content: ""; pointer-events: none; background: radial-gradient(ellipse at center, rgba(23, 13, 38, .42) 0%, rgba(23, 13, 38, .2) 48%, transparent 74%); }
   .amount { justify-content: center; width: 100%; min-width: 0; margin: 0; color: #ffe477; background: none; font: 400 clamp(92px, 28vw, 120px)/.8 "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; text-align: center; white-space: nowrap; -webkit-text-fill-color: #ffe477; -webkit-text-stroke: 2px #4b174f; text-shadow: 5px 6px 0 #ca3a91, 0 10px 25px rgba(19, 7, 28, .68); }
-  .cta { position: relative; z-index: 2; isolation: isolate; justify-content: center; align-self: center; width: min(100%, 328px); min-height: 64px; margin-top: clamp(13px, 2vh, 18px); margin-bottom: 0; padding: 16px 24px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: clamp(18px, 4.8vw, 20px); font-weight: 400; font-synthesis: none; line-height: 1; letter-spacing: .02em; box-shadow: none; text-shadow: -1px -1px 0 #2d1038, 1px -1px 0 #2d1038, -1px 1px 0 #2d1038, 1px 1px 0 #2d1038, 3px 3px 0 #d63d99; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
+  .cta-row { margin-top: clamp(13px, 2vh, 18px); }
+  .cta { position: relative; z-index: 2; isolation: isolate; justify-content: flex-start; align-self: center; width: min(100%, 328px); min-height: 64px; margin-top: 0; margin-bottom: 0; padding: 16px 116px 16px 70px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: clamp(18px, 4.8vw, 20px); font-weight: 400; font-synthesis: none; line-height: 1; letter-spacing: .02em; box-shadow: none; text-shadow: -1px -1px 0 #2d1038, 1px -1px 0 #2d1038, -1px 1px 0 #2d1038, 1px 1px 0 #2d1038, 3px 3px 0 #d63d99; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
   .cta::before, .cta::after { position: absolute; inset: 0; content: ""; pointer-events: none; clip-path: polygon(4% 0, 100% 7%, 96% 100%, 0 92%); }
   .cta::before { z-index: -1; background: #25d64d; transition: background .16s ease; }
   .cta::after { z-index: -2; background: #43134f; transform: translateY(8px); }
   .cta:hover { background: transparent; transform: translateY(-1px); }
   .cta:hover::before { background: #39ec61; }
   .cta:active { animation: none; transform: translateY(3px); }
-  .cta svg { filter: drop-shadow(2px 2px 0 #d63d99); }
+  .cta svg { position: absolute; right: 58px; filter: drop-shadow(2px 2px 0 #d63d99); }
   .cta__amount { display: none; }
-  .cta__timer { min-width: 62px; padding: 6px 8px 7px; }
+  .cta__timer { position: absolute; z-index: 4; top: 50%; right: calc(50% - 56px); min-width: 62px; padding: 6px 8px 7px; transform: translateY(-50%); }
   .cta__timer time { font-size: clamp(20px, 5.6vw, 24px); }
   .cta--expired { cursor: not-allowed; color: #e2d6e5; animation: none; }
   .cta--expired::before { background: #67606b; }
@@ -202,7 +205,8 @@ h1 .headline-group--accent { color: var(--gold); }
   .hero-copy h2 { font-size: 13px; line-height: 1.2; }
   .hero-offer { margin-top: 7px; transform: none; }
   .amount { font-size: clamp(80px, 25vw, 90px); }
-  .cta { min-height: 50px; margin-top: 9px; font-size: 16px; }
+  .cta-row { margin-top: 9px; }
+  .cta { min-height: 50px; font-size: 16px; }
   .cta__timer { min-width: 56px; padding: 5px 7px 6px; }
   .cta__timer time { font-size: 18px; }
   .trust-proof { margin-top: 8px; font-size: 8px; }
@@ -212,7 +216,7 @@ h1 .headline-group--accent { color: var(--gold); }
   .payments__row--cards img { height: 20px; }
 }
 
-@keyframes cta-gta-pulse { 0%, 68%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 8px rgba(57, 236, 97, .24)) drop-shadow(0 0 18px rgba(57, 236, 97, .12)); } 82% { transform: translateY(-2px) scale(1.025); filter: drop-shadow(0 0 22px rgba(57, 236, 97, .72)) drop-shadow(0 0 44px rgba(57, 236, 97, .38)); } 91% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 12px rgba(57, 236, 97, .3)); } }
+@keyframes cta-gta-pulse { 0%, 68%, 100% { filter: drop-shadow(0 0 8px rgba(57, 236, 97, .24)) drop-shadow(0 0 18px rgba(57, 236, 97, .12)); } 82% { filter: drop-shadow(0 0 22px rgba(57, 236, 97, .72)) drop-shadow(0 0 44px rgba(57, 236, 97, .38)); } 91% { filter: drop-shadow(0 0 12px rgba(57, 236, 97, .3)); } }
 @keyframes money-mobile-left { 0%, 100% { transform: translate3d(-6px, 8px, 0) rotate(-16deg); } 50% { transform: translate3d(8px, -10px, 0) rotate(-8deg); } }
 @keyframes money-mobile-right { 0%, 100% { transform: translate3d(7px, 10px, 0) rotate(17deg); } 50% { transform: translate3d(-8px, -8px, 0) rotate(9deg); } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; }.money-float, .cta, .live-activity__dot { animation: none; transition: none; }.cashout-toast { transition: none; } }
