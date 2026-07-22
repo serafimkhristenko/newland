@@ -5,52 +5,98 @@
   var target = Number(amounts[0].dataset.countTo);
   var duration = 6500;
   var startedAt = null;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function lockAmountWidths() {
-    amounts.forEach(function (amount) {
-      if (!amount.getClientRects().length) return;
+  // The amount is set in the Pricedown display font, whose digits are
+  // proportional and lack tabular figures — so a plain textContent count-up
+  // makes the number wiggle horizontally frame to frame. Render each glyph in
+  // its own fixed-width "odometer" cell so digits only change in place.
+  function buildCells(amount, str) {
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < str.length; i += 1) {
+      var ch = str.charAt(i);
+      var cell = document.createElement("span");
+      cell.className = ch >= "0" && ch <= "9" ? "odo-cell odo-cell--digit" : "odo-cell odo-cell--symbol";
+      cell.textContent = ch;
+      frag.appendChild(cell);
+    }
+    amount.textContent = "";
+    amount.appendChild(frag);
+    amount._odoLen = str.length;
+  }
 
-      var targetValue = "$" + Math.round(Number(amount.dataset.countTo));
-      amount.textContent = targetValue;
-      var width = Math.ceil(amount.getBoundingClientRect().width);
+  function setValue(amount, str) {
+    if (amount._odoLen !== str.length) {
+      buildCells(amount, str);
+      return;
+    }
+    var cells = amount.childNodes;
+    for (var i = 0; i < str.length; i += 1) {
+      if (cells[i].textContent !== str.charAt(i)) cells[i].textContent = str.charAt(i);
+    }
+  }
 
-      amount.style.width = width + "px";
-      amount.style.minWidth = width + "px";
-      if (amount.classList.contains("cta__amount")) {
-        amount.style.flexBasis = width + "px";
-      }
-      amount.textContent = "$0";
-    });
+  // Size every digit cell to the widest glyph 0-9 in this element's own font,
+  // measured after web fonts have loaded so the reservation is exact.
+  function measureDigitWidth(amount) {
+    if (!amount.getClientRects().length) return; // hidden at this breakpoint
+    var probe = document.createElement("span");
+    probe.className = "odo-cell odo-cell--digit";
+    probe.style.position = "absolute";
+    probe.style.visibility = "hidden";
+    probe.style.width = "auto";
+    amount.appendChild(probe);
+    var max = 0;
+    for (var d = 0; d <= 9; d += 1) {
+      probe.textContent = String(d);
+      max = Math.max(max, probe.getBoundingClientRect().width);
+    }
+    amount.removeChild(probe);
+    if (max > 0) amount.style.setProperty("--odo-digit-width", (Math.ceil(max * 100) / 100) + "px");
+  }
+
+  function reserveWidth(amount) {
+    if (!amount.getClientRects().length) return;
+    setValue(amount, "$" + Math.round(target));
+    var width = Math.ceil(amount.getBoundingClientRect().width);
+    amount.style.minWidth = width + "px";
+    if (amount.classList.contains("cta__amount")) amount.style.flexBasis = width + "px";
   }
 
   function render(value) {
-    amounts.forEach(function (amount) {
-      amount.textContent = "$" + Math.round(value);
-    });
-  }
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    render(target);
-    return;
+    var str = "$" + Math.round(value);
+    amounts.forEach(function (amount) { setValue(amount, str); });
   }
 
   function animate(timestamp) {
     if (startedAt === null) startedAt = timestamp;
-
     var progress = Math.min((timestamp - startedAt) / duration, 1);
     var easedProgress = 1 - Math.pow(1 - progress, 3);
     render(target * easedProgress);
-
-    if (progress < 1) {
-      window.requestAnimationFrame(animate);
-    } else {
-      render(target);
-    }
+    if (progress < 1) window.requestAnimationFrame(animate);
+    else render(target);
   }
 
-  lockAmountWidths();
-  render(0);
-  window.requestAnimationFrame(animate);
+  var started = false;
+  function start() {
+    if (started) return;
+    started = true;
+    amounts.forEach(measureDigitWidth);
+    amounts.forEach(reserveWidth);
+    if (reduceMotion) {
+      render(target);
+      return;
+    }
+    render(0);
+    window.requestAnimationFrame(animate);
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(start);
+    if (document.fonts.status === "loaded") start();
+  } else {
+    start();
+  }
 })();
 
 (function () {
