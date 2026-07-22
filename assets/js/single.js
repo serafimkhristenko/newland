@@ -3,7 +3,7 @@
   if (!amounts.length) return;
 
   var target = Number(amounts[0].dataset.countTo);
-  var duration = 4500;
+  var duration = 6500;
   var startedAt = null;
 
   function render(value) {
