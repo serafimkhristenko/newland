@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/single.css?v=20260722-21">
+  <link rel="stylesheet" href="assets/css/single.css?v=20260722-22">
 </head>
 <body>
   <main class="casino-page">
@@ -24,6 +24,17 @@
       <div class="money-float money-float--two" aria-hidden="true"><img src="assets/images/money-stack-vertical.webp?v=20260722-1" width="433" height="600" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
       <div class="money-float money-float--three" aria-hidden="true"><img src="assets/images/money-stack-diagonal.webp?v=20260722-1" width="433" height="600" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
       <div class="money-float money-float--four" aria-hidden="true"><img src="assets/images/money-stack-diagonal.webp?v=20260722-1" width="433" height="600" alt="" loading="lazy" decoding="async" fetchpriority="low"></div>
+      <aside class="live-activity" data-live-activity aria-label="Демонстрационные показатели активности игроков">
+        <span class="live-activity__badge"><span class="live-activity__dot" aria-hidden="true"></span>Демо</span>
+        <span class="live-activity__stat">Сейчас играют: <b data-live-players>154 475</b></span>
+        <span class="live-activity__stat">Выплачено сегодня: <b data-live-paid>$250 000 000</b></span>
+      </aside>
+      <div class="cashout-feed" data-cashout-feed aria-hidden="true">
+        <div class="cashout-toast" data-cashout-toast hidden>
+          <span class="cashout-toast__badge">Демо</span>
+          <span><strong data-cashout-player>LuckyAce77</strong> вывел <b data-cashout-amount>$12 500</b></span>
+        </div>
+      </div>
       <div class="hero-copy">
         <div class="hero-lead">
           <h1 id="hero-title">Яркие эмоции.<br><span>Крупные выигрыши.</span></h1>
@@ -64,6 +75,6 @@
       </footer>
     </section>
   </main>
-  <script src="assets/js/single.js?v=20260722-8"></script>
+  <script src="assets/js/single.js?v=20260722-9"></script>
 </body>
 </html>

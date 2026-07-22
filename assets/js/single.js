@@ -100,3 +100,105 @@
   renderTimer();
   intervalId = window.setInterval(renderTimer, 250);
 })();
+
+(function () {
+  var playersElement = document.querySelector("[data-live-players]");
+  var paidElement = document.querySelector("[data-live-paid]");
+  var toast = document.querySelector("[data-cashout-toast]");
+  var playerElement = document.querySelector("[data-cashout-player]");
+  var amountElement = document.querySelector("[data-cashout-amount]");
+  if (!playersElement || !paidElement) return;
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var players = 154475;
+  var paid = 250000000;
+  var roots = [
+    "LuckyAce", "NeonWolf", "RiverKing", "SpinQueen", "CryptoFox",
+    "RoyalFlush", "NightOwl", "WildSeven", "TurboChip", "VegasMoon",
+    "PokerNova", "GoldShark", "RedDiamond", "BlackJack", "MintDealer",
+    "FlashBet", "PixelAce", "StormCard", "MoonRoulette", "CherryKing",
+    "WinHunter", "CashRaven", "HighRoller", "LuckyByte", "VioletTiger"
+  ];
+  var suffixes = ["77", "X", "VIP", "_777", "Pro", "GG"];
+  var nicknames = [];
+  var nicknameIndex = 0;
+
+  function formatNumber(value) {
+    return Math.round(value).toLocaleString("ru-RU");
+  }
+
+  function shuffle(values) {
+    for (var index = values.length - 1; index > 0; index -= 1) {
+      var randomIndex = Math.floor(Math.random() * (index + 1));
+      var current = values[index];
+      values[index] = values[randomIndex];
+      values[randomIndex] = current;
+    }
+  }
+
+  roots.forEach(function (root) {
+    suffixes.forEach(function (suffix) {
+      nicknames.push(root + suffix);
+    });
+  });
+  shuffle(nicknames);
+
+  function updateStats() {
+    players += Math.floor(Math.random() * 31) - 12;
+    if (players < 154475) players = 154475 + Math.floor(Math.random() * 20);
+    paid += Math.floor(Math.random() * 9000) + 1500;
+    playersElement.textContent = formatNumber(players);
+    paidElement.textContent = "$" + formatNumber(paid);
+  }
+
+  function nextNickname() {
+    if (nicknameIndex >= nicknames.length) {
+      shuffle(nicknames);
+      nicknameIndex = 0;
+    }
+    var nickname = nicknames[nicknameIndex];
+    nicknameIndex += 1;
+    return nickname;
+  }
+
+  function fillToast() {
+    if (!toast || !playerElement || !amountElement) return;
+    var cashout = 1000 + Math.floor(Math.random() * 541) * 100;
+    playerElement.textContent = nextNickname();
+    amountElement.textContent = "$" + formatNumber(cashout);
+  }
+
+  function showToast() {
+    if (!toast) return;
+    fillToast();
+    toast.hidden = false;
+    toast.classList.remove("is-leaving");
+    window.requestAnimationFrame(function () {
+      toast.classList.add("is-visible");
+    });
+
+    window.setTimeout(function () {
+      toast.classList.remove("is-visible");
+      toast.classList.add("is-leaving");
+      window.setTimeout(function () {
+        toast.hidden = true;
+        toast.classList.remove("is-leaving");
+        window.setTimeout(showToast, 2200 + Math.random() * 3200);
+      }, 320);
+    }, 3600);
+  }
+
+  if (reduceMotion) {
+    fillToast();
+    if (toast) {
+      toast.hidden = false;
+      toast.classList.add("is-visible");
+    }
+    return;
+  }
+
+  window.setInterval(function () {
+    if (!document.hidden) updateStats();
+  }, 2600);
+  window.setTimeout(showToast, 1800);
+})();
