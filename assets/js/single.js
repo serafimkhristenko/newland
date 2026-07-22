@@ -114,11 +114,13 @@
   var playersElement = document.querySelector("[data-live-players]");
   var paidElement = document.querySelector("[data-live-paid]");
   var toast = document.querySelector("[data-cashout-toast]");
+  var activityElement = document.querySelector("[data-live-activity]");
   var playerElement = document.querySelector("[data-cashout-player]");
   var amountElement = document.querySelector("[data-cashout-amount]");
   if (!playersElement || !paidElement) return;
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var mobileCashout = window.matchMedia("(max-width: 640px)");
   var players = 154475;
   var paid = 25000000;
   var roots = [
@@ -179,7 +181,9 @@
 
   function showToast() {
     if (!toast) return;
+    var visibleDuration = mobileCashout.matches ? 2800 : 3600;
     fillToast();
+    if (activityElement) activityElement.classList.add("is-obscured");
     toast.hidden = false;
     toast.classList.remove("is-leaving");
     window.requestAnimationFrame(function () {
@@ -192,14 +196,19 @@
       window.setTimeout(function () {
         toast.hidden = true;
         toast.classList.remove("is-leaving");
-        window.setTimeout(showToast, 2200 + Math.random() * 3200);
+        if (activityElement) activityElement.classList.remove("is-obscured");
+        var nextDelay = mobileCashout.matches
+          ? 5000 + Math.random() * 3000
+          : 2200 + Math.random() * 3200;
+        window.setTimeout(showToast, nextDelay);
       }, 320);
-    }, 3600);
+    }, visibleDuration);
   }
 
   if (reduceMotion) {
     fillToast();
     if (toast) {
+      if (activityElement) activityElement.classList.add("is-obscured");
       toast.hidden = false;
       toast.classList.add("is-visible");
     }
@@ -209,5 +218,5 @@
   window.setInterval(function () {
     if (!document.hidden) updateStats();
   }, 2600);
-  window.setTimeout(showToast, 1800);
+  window.setTimeout(showToast, mobileCashout.matches ? 3500 : 1800);
 })();
