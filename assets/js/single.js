@@ -39,7 +39,6 @@
   var timer = document.querySelector("[data-bonus-timer]");
   if (!timer) return;
 
-  var timerLabel = timer.querySelector("[data-timer-label]");
   var timerValue = timer.querySelector("[data-timer-value]");
   var cta = document.querySelector(".cta");
   var ctaLabel = cta ? cta.querySelector(".cta__label") : null;
@@ -60,9 +59,8 @@
   }
 
   function expireBonus() {
-    timer.classList.add("bonus-timer--expired");
+    timer.classList.add("cta__timer--expired");
     timer.setAttribute("aria-live", "polite");
-    timerLabel.textContent = "Бонус сгорел";
     timerValue.textContent = "00:00";
     timerValue.dateTime = "PT0S";
     timerValue.setAttribute("aria-label", "Время бонуса истекло");
