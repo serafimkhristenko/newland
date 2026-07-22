@@ -10,10 +10,11 @@
   <link rel="preload" as="image" href="assets/images/gta-mobile.webp?v=20260722-3" media="(max-width: 640px)" fetchpriority="high">
   <link rel="preload" as="image" href="assets/images/gta-desktop-casino.webp?v=20260722-1" media="(min-width: 641px)" fetchpriority="high">
   <link rel="preload" as="font" href="assets/fonts/barlow-condensed-900.ttf?v=20260722-2" type="font/ttf" crossorigin>
+  <link rel="preload" as="font" href="assets/fonts/roboto-condensed-900-cyrillic.woff2?v=20260722-2" type="font/woff2" media="(max-width: 640px)" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/single.css?v=20260722-20">
+  <link rel="stylesheet" href="assets/css/single.css?v=20260722-21">
 </head>
 <body>
   <main class="casino-page">
@@ -30,7 +31,9 @@
         </div>
         <div class="hero-offer">
           <p class="amount" data-count-to="12500" aria-label="Бонус 12500 долларов">$0</p>
-          <a class="cta" href="#footer">Забрать <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <p class="bonus-timer" data-bonus-timer role="timer"><span data-timer-label>Бонус сгорит через</span><time datetime="PT2M" data-timer-value aria-label="Осталось 2 минуты">02:00</time></p>
+          <a class="cta" href="#footer"><span class="cta__label">Забрать</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <p class="trust-proof">🔒 Лицензия · ⚡ Моментальные выплаты · 18+</p>
         </div>
       </div>
       <footer class="site-footer" id="footer">
@@ -61,6 +64,6 @@
       </footer>
     </section>
   </main>
-  <script src="assets/js/single.js?v=20260722-7"></script>
+  <script src="assets/js/single.js?v=20260722-8"></script>
 </body>
 </html>
