@@ -137,7 +137,7 @@ h1 .headline-group--accent { color: var(--gold); }
   .cta-stack .cta__timer { width: 100%; min-width: 0; height: 100%; padding: 12px; background: transparent; clip-path: none; box-shadow: none; filter: none; }
   .cta-stack .cta__timer time { font-size: clamp(36px, 2.8vw, 40px); }
   .cta-stack .cta svg { display: none; }
-  .cta-stack .trust-proof { align-self: flex-start; width: calc(100% - 122px); max-width: calc(100vw - 32px); margin-top: 12px; font-size: 22px; }
+  .cta-stack .trust-proof { align-self: flex-start; width: calc(100% - 122px); max-width: calc(100vw - 32px); margin-top: 12px; font-size: 11px; }
 }
 
 @media (min-width: 641px) and (max-width: 1099px) {
