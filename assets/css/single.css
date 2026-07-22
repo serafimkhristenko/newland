@@ -18,6 +18,14 @@
 }
 
 @font-face {
+  font-family: "Pricedown Black Local";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/pricedown-black.otf?v=20260723-1") format("opentype");
+}
+
+@font-face {
   font-family: "Barlow Condensed Local";
   font-style: normal;
   font-weight: 900;
@@ -71,12 +79,12 @@ a { color: inherit; }
 .footer__age { display: grid; place-items: center; width: 50px; height: 50px; border: 2px solid var(--pink); border-radius: 50%; color: var(--white); background: rgba(29, 10, 40, .35); font-size: 13px; font-weight: 900; }
 
 .hero-copy { width: min(610px, calc(100% - 80px)); margin: auto auto auto max(8vw); padding: 4.5vh 0; }
-h1 { max-width: 610px; margin: 0; font: 400 clamp(58px, 7vw, 104px)/.86 "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: .012em; text-transform: uppercase; text-shadow: 5px 6px 0 rgba(107, 35, 100, .58); }
-h1 .headline-group--accent { color: var(--gold); }
+h1 { max-width: 610px; margin: 0; font: 900 clamp(58px, 7vw, 104px)/1.2 "Pricedown Black Local", "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: .012em; text-transform: uppercase; text-shadow: 5px 6px 0 var(--gold); }
+h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
 .hero-copy h2 { max-width: 500px; margin: 28px 0 6px; color: var(--white); font-family: Montserrat, Arial, sans-serif; font-size: clamp(15px, 1.8vw, 21px); font-weight: 800; font-synthesis: none; line-height: 1.25; letter-spacing: .005em; }
 .hero-copy h2 strong { color: var(--gold); font-weight: 900; }
-.amount { display: flex; align-items: baseline; gap: 9px; margin: 0; color: var(--white); font: 400 clamp(74px, 10vw, 138px)/.9 "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: 0; text-shadow: 7px 8px 0 #bb2f72; }
-.cta { position: relative; z-index: 2; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-width: 220px; min-height: 64px; margin-top: 18px; padding: 17px 30px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: 18px; font-weight: 400; font-synthesis: none; line-height: 1; letter-spacing: .02em; text-decoration: none; text-shadow: -1px -1px 0 #2d1038, 1px -1px 0 #2d1038, -1px 1px 0 #2d1038, 1px 1px 0 #2d1038, 3px 3px 0 #d63d99; text-transform: uppercase; touch-action: manipulation; box-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
+.amount { display: flex; align-items: baseline; gap: 9px; margin: 0; color: var(--white); font: 900 clamp(74px, 10vw, 138px)/.9 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: 0; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
+.cta { position: relative; z-index: 2; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-width: 220px; min-height: 64px; margin-top: 18px; padding: 17px 30px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: 18px; font-weight: 900; font-synthesis: none; line-height: 1; letter-spacing: .02em; text-decoration: none; text-shadow: -1px -1px 0 #2d1038, 1px -1px 0 #2d1038, -1px 1px 0 #2d1038, 1px 1px 0 #2d1038, 3px 3px 0 #d63d99; text-transform: uppercase; touch-action: manipulation; box-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
 .cta::before, .cta::after { position: absolute; inset: 0; content: ""; pointer-events: none; clip-path: none; }
 .cta::before { z-index: -1; background: #25d64d; transition: background .16s ease; }
 .cta::after { z-index: -2; background: #43134f; transform: translateY(8px); }
@@ -84,8 +92,8 @@ h1 .headline-group--accent { color: var(--gold); }
 .cta--expired { cursor: not-allowed; color: #e2d6e5; animation: none; }.cta--expired::before { background: #67606b; }.cta--expired::after { background: #29182f; }.cta--expired:hover { transform: none; }.cta--expired:hover::before { background: #67606b; }
 .cta:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .cta svg { display: none; }
-.cta__label { flex: 0 0 auto; font: 400 clamp(22px, 2.5vw, 36px)/1 "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-synthesis: none; }
-.cta__amount { flex: 0 0 auto; color: var(--gold); font: 400 clamp(74px, 10vw, 138px)/.8 "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
+.cta__label { flex: 0 0 auto; font: 900 clamp(22px, 2.5vw, 36px)/1 "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-synthesis: none; }
+.cta__amount { flex: 0 0 auto; color: var(--gold); font: 900 clamp(74px, 10vw, 138px)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
 .cta-row { position: relative; display: flex; align-items: stretch; justify-content: center; width: 100%; }
 .cta__timer { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-width: 68px; padding: 7px 10px 8px; color: var(--gold); background: transparent; clip-path: none; box-shadow: none; text-shadow: 2px 2px 0 #8e225f; pointer-events: none; }
 .cta__timer time { font: 400 24px/1 "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: .04em; }
@@ -119,7 +127,7 @@ h1 .headline-group--accent { color: var(--gold); }
   .screen--hero { grid-template-rows: minmax(0, 1fr) auto; align-content: normal; min-height: calc(100svh + clamp(116px, 14vh, 144px)); }
   .screen--hero .screen__image { transform: none; }
   .hero-copy { align-self: center; width: min(880px, calc(100vw - max(6vw, 48px) - 16px)); margin-left: max(6vw, 48px); padding: clamp(28px, 4vh, 46px) 0 clamp(18px, 2.5vh, 30px); text-align: left; }
-  h1 { max-width: 460px; margin-inline: 0; font-size: clamp(52px, 5.8vw, 88px); line-height: .86; text-align: left; text-shadow: 4px 5px 0 rgba(107, 35, 100, .58); }
+  h1 { max-width: 460px; margin-inline: 0; font-size: clamp(52px, 5.8vw, 88px); line-height: 1.2; text-align: left; text-shadow: 5px 6px 0 var(--gold); }
   .hero-lead { width: calc(100% - 122px); }
   h1 .headline-group, h1 .headline-line { display: block; }
   h1 .headline-group--accent { margin-top: clamp(4px, .4vw, 6px); }
@@ -132,12 +140,12 @@ h1 .headline-group--accent { color: var(--gold); }
   .cta-stack .cta::before, .cta-stack .cta::after { clip-path: none; }
   .cta-stack .cta::before { background: linear-gradient(135deg, #31e75a 0%, #20cf48 72%, #18ba3c 100%); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .24), inset 0 -4px 0 rgba(10, 103, 39, .24); }
   .cta-stack .cta::after { transform: translateY(6px); }
-  .cta-stack .cta__label { font: 400 var(--cta-label-size)/.8 "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: -.025em; }
-  .cta-stack .cta__amount { width: 2.65em; min-width: 2.65em; font-size: var(--cta-amount-size); line-height: .8; text-align: center; -webkit-text-stroke-width: 1.6px; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
+  .cta-stack .cta__label { font: 900 var(--cta-label-size)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: -.025em; -webkit-text-stroke: 10px #050307; paint-order: stroke fill; }
+  .cta-stack .cta__amount { width: 2.65em; min-width: 2.65em; font-size: var(--cta-amount-size); line-height: .8; text-align: center; -webkit-text-stroke: 10px #050307; paint-order: stroke fill; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
   .cta-stack .cta__timer { width: 100%; min-width: 0; height: 100%; padding: 12px; background: transparent; clip-path: none; box-shadow: none; filter: none; }
   .cta-stack .cta__timer time { font-size: clamp(36px, 2.8vw, 40px); }
   .cta-stack .cta svg { display: none; }
-  .cta-stack .trust-proof { align-self: flex-start; width: calc(100% - 122px); max-width: calc(100vw - 32px); margin-top: 12px; font-size: 7.33px; text-align: left; }
+  .cta-stack .trust-proof { align-self: flex-start; width: calc(100% - 122px); max-width: calc(100vw - 32px); margin-top: 12px; font-size: 14px; text-align: left; }
 }
 
 @media (min-width: 641px) and (max-width: 1099px) {
@@ -182,13 +190,13 @@ h1 .headline-group--accent { color: var(--gold); }
   .cashout-toast b { font-size: 14px; }
   .hero-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; width: 100%; min-width: 0; height: 100%; margin: 0; padding: calc(104px + env(safe-area-inset-top, 0px)) 16px clamp(10px, 1.8vh, 16px); }
   .hero-lead { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: clamp(7px, 1.1vh, 10px); align-self: start; width: 100%; min-width: 0; text-align: center; }
-  h1 { justify-self: center; width: 100%; max-width: 100%; min-width: 0; margin: 0; color: var(--white); font: 400 clamp(32px, 9vw, 40px)/.92 "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: .015em; text-align: center; text-transform: uppercase; white-space: nowrap; transform: scaleX(.98); transform-origin: center top; -webkit-text-stroke: 1px #2e0c3f; paint-order: stroke fill; text-shadow: 2px 3px 0 #35113f, 0 0 1px rgba(255, 248, 241, .34), 0 9px 20px rgba(18, 7, 28, .52); }
+  h1 { justify-self: center; width: 100%; max-width: 100%; min-width: 0; margin: 0; color: var(--white); font: 900 clamp(32px, 9vw, 40px)/1.2 "Pricedown Black Local", "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: .015em; text-align: center; text-transform: uppercase; white-space: nowrap; transform: scaleX(.98); transform-origin: center top; -webkit-text-stroke: 1px #2e0c3f; paint-order: stroke fill; text-shadow: 3px 4px 0 var(--gold), 0 0 1px rgba(255, 248, 241, .34), 0 9px 20px rgba(18, 7, 28, .52); }
   h1 .headline-group { display: block; }
   h1 .headline-line { display: inline; }
   .hero-copy h2 { width: 100%; max-width: 380px; min-width: 0; margin: 0; color: rgba(255, 248, 241, .96); font-family: Montserrat, Arial, sans-serif; font-size: clamp(14px, 4vw, 17px); font-weight: 700; line-height: 1.3; text-align: center; text-shadow: 0 2px 10px rgba(16, 6, 25, .82); }
   .hero-offer { position: relative; align-self: center; display: flex; flex-direction: column; align-items: center; width: 100%; min-width: 0; margin-top: clamp(10px, 1.5vh, 14px); transform: none; }
   .hero-offer::before { position: absolute; z-index: -1; inset: -38px -16px -44px; content: ""; pointer-events: none; background: radial-gradient(ellipse at center, rgba(23, 13, 38, .42) 0%, rgba(23, 13, 38, .2) 48%, transparent 74%); }
-  .amount { justify-content: center; width: 100%; min-width: 0; margin: 0; color: var(--gold); background: none; font: 400 clamp(84px, 26vw, 110px)/.8 "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; text-align: center; white-space: nowrap; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
+  .amount { justify-content: center; width: 100%; min-width: 0; margin: 0; color: var(--gold); background: none; font: 900 clamp(84px, 26vw, 110px)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; text-align: center; white-space: nowrap; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
   .cta-row { margin-top: clamp(13px, 2vh, 18px); }
   .cta { position: relative; z-index: 2; isolation: isolate; justify-content: flex-start; align-self: center; width: min(100%, 328px); min-height: 64px; margin-top: 0; margin-bottom: 0; padding: 16px 116px 16px 70px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: clamp(18px, 4.8vw, 20px); font-weight: 400; font-synthesis: none; line-height: 1; letter-spacing: .02em; box-shadow: none; text-shadow: -1px -1px 0 #2d1038, 1px -1px 0 #2d1038, -1px 1px 0 #2d1038, 1px 1px 0 #2d1038, 3px 3px 0 #d63d99; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
   .cta::before, .cta::after { position: absolute; inset: 0; content: ""; pointer-events: none; clip-path: none; }
