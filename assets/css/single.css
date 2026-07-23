@@ -140,25 +140,23 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
   .hero-offer { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "action"; align-items: start; width: min(780px, 100%); margin-inline: 0; }
   .amount { display: none; }
   .cta-stack { grid-area: action; align-self: start; width: 100%; }
-  .cta-stack .cta-row { display: block; }
-  .cta-stack .cta { --cta-amount-size: clamp(54px, 6.15vw, 88px); --cta-label-size: clamp(48px, 5.45vw, 78px); width: calc(100% - 122px); min-width: 0; height: clamp(116px, 9vw, 138px); margin-top: 0; padding: 20px clamp(20px, 2.8vw, 36px) 24px; gap: clamp(14px, 1.6vw, 22px); }
+  .cta-stack .cta-row { display: block; margin-bottom: clamp(38px, 3vw, 48px); }
+  .cta-stack .cta { --cta-amount-size: clamp(54px, 6.15vw, 88px); --cta-label-size: clamp(48px, 5.45vw, 78px); width: 100%; min-width: 0; height: clamp(116px, 9vw, 138px); margin-top: 0; padding: 20px clamp(20px, 2.8vw, 36px) 24px; gap: clamp(14px, 1.6vw, 22px); }
   .cta-stack .cta::before, .cta-stack .cta::after { clip-path: none; }
   .cta-stack .cta::before { background: linear-gradient(135deg, #31e75a 0%, #20cf48 72%, #18ba3c 100%); box-shadow: none; }
   .cta-stack .cta::after { transform: translateY(6px); }
   .cta-stack .cta__label { font: 900 var(--cta-label-size)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, "Arial Narrow", sans-serif; font-synthesis: none; letter-spacing: -.025em; -webkit-text-stroke: 10px #050307; paint-order: stroke fill; }
   .cta-stack .cta__amount { width: 2.65em; min-width: 2.65em; font-size: var(--cta-amount-size); line-height: .8; text-align: center; -webkit-text-stroke: 10px #050307; paint-order: stroke fill; text-shadow: none; }
-  .cta-stack .cta__timer { position: absolute; top: 0; left: calc(100% + 12px); display: flex; align-items: center; justify-content: center; width: 110px; min-width: 0; height: 100%; padding: 12px; background: transparent; clip-path: none; box-shadow: none; filter: none; }
-  .cta-stack .cta__timer time { font-size: clamp(36px, 2.8vw, 40px); }
+  .cta-stack .cta__timer { position: absolute; top: calc(100% + 6px); right: 0; left: auto; display: flex; align-items: center; justify-content: flex-end; width: auto; min-width: 0; height: auto; padding: 0; background: transparent; clip-path: none; box-shadow: none; filter: none; }
+  .cta-stack .cta__timer time { font-size: clamp(28px, 2.4vw, 34px); }
   .cta-stack .cta svg { display: none; }
-  .cta-stack .trust-proof { align-self: flex-start; width: calc(100% - 122px); max-width: calc(100vw - 32px); margin-top: 12px; font-size: 14px; text-align: left; }
+  .cta-stack .trust-proof { align-self: flex-start; width: 100%; max-width: calc(100vw - 32px); margin-top: 12px; font-size: 14px; text-align: left; }
 }
 
 @media (min-width: 641px) and (max-width: 1099px) {
   .hero-offer { width: min(770px, 100%); }
   .hero-lead { width: calc(100% - 108px); }
-  .cta-stack .cta { width: calc(100% - 108px); }
-  .cta-stack .cta__timer { left: calc(100% + 12px); width: 96px; }
-  .cta-stack .trust-proof { width: calc(100% - 108px); }
+  .cta-stack .trust-proof { width: 100%; }
   .cashout-feed { right: clamp(20px, 3vw, 46px); left: auto; }
 }
 
@@ -203,7 +201,7 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
   .hero-offer { position: relative; align-self: center; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; width: 100%; min-width: 0; margin-top: clamp(7px, 1.4vh, 11px); transform: none; }
   .hero-offer::before { position: absolute; z-index: -1; inset: -38px -16px -44px; content: ""; pointer-events: none; background: radial-gradient(ellipse at center, rgba(23, 13, 38, .42) 0%, rgba(23, 13, 38, .2) 48%, transparent 74%); }
   .amount { justify-content: center; width: 100%; min-width: 0; margin: 0; color: var(--gold); background: none; font: 900 clamp(72px, 21vw, 84px)/.8 "Pricedown Black Local", "Pricedown Rus Local", Impact, sans-serif; font-variant-numeric: tabular-nums; font-synthesis: none; letter-spacing: -.02em; text-align: center; white-space: nowrap; -webkit-text-fill-color: var(--gold); -webkit-text-stroke: 2px #4b174f; text-shadow: 3px 4px 0 #ca3a91, 0 7px 17px rgba(19, 7, 28, .48); }
-  .amount .odo-cell { margin-inline: 0.035em; }
+  .amount .odo-cell--digit { width: calc(var(--odo-digit-width, 0.62em) + 0.08em); }
   .cta-row { margin-top: clamp(16px, 2.6vh, 21px); }
   .cta { position: relative; z-index: 2; isolation: isolate; justify-content: space-evenly; gap: 10px; align-self: center; width: min(100%, 328px); min-height: 72px; margin-top: 0; margin-bottom: 0; padding: 14px 16px; border-radius: 0; background: transparent; color: #fff8fb; font-family: "Pricedown Black Local", "Pricedown Rus Local", Montserrat, Arial, sans-serif; font-size: clamp(18px, 4.8vw, 20px); font-weight: 900; font-synthesis: none; line-height: 1; letter-spacing: .02em; box-shadow: none; text-shadow: none; animation: cta-gta-pulse 2.4s ease-in-out infinite; transition: transform .16s ease; }
   .cta__label { position: static; margin: 0; font-size: clamp(30px, 8vw, 38px); line-height: 1; letter-spacing: .01em; color: #fff8fb; -webkit-text-stroke: 4.5px #050307; paint-order: stroke fill; transform: none; }
@@ -267,8 +265,11 @@ h1 .headline-group--accent { color: var(--gold); text-shadow: 3px 4px 0 #ca3a91,
 .odo-cell { display: inline-block; text-align: center; }
 .odo-cell--digit { width: var(--odo-digit-width, 0.62em); }
 /* Small breathing room between the big counting digits so they don't merge
-   under the thick GTA stroke (desktop amount) or the tight display font. */
-.cta__amount .odo-cell { margin-inline: 0.055em; }
+   under the thick GTA stroke (desktop amount) or the tight display font.
+   Applied via cell WIDTH (not margin) so single.js's width reservation, which
+   measures getBoundingClientRect, accounts for it and the amount never
+   overflows its button. */
+.cta__amount .odo-cell--digit { width: calc(var(--odo-digit-width, 0.62em) + 0.12em); }
 .amount { gap: 0; }
 .h2-break { display: none; }
 @media (max-width: 640px) { .h2-break { display: inline; } }
