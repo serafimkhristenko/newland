@@ -19,7 +19,6 @@
 - Preserve the GTA-inspired casino art direction, gold secondary emphasis, and lime as the only CTA accent.
 - The approved desktop H1 is the original PC rendering from commit `24ab1a4`: `Impact` first, without `font-synthesis` or text stroke. On mobile, use the bundled Roboto Condensed 900 with an Impact-like heavy treatment for H1, Montserrat for H2 and CTA, and the bundled Barlow Condensed 900 for the amount and countdown digits.
 - Keep offer text as live HTML, never baked into raster art.
-- Any locally simulated player counts, paid totals, or cashout notifications must remain visibly labelled as demo activity; do not present generated values as API-backed facts.
 - Mobile decorative assets must not compete with the offer or cause avoidable above-the-fold downloads.
 - Maintain visible keyboard focus, at least 44×44px touch targets, safe-area padding, and `prefers-reduced-motion` behavior.
 - Use static HTML/CSS/vanilla JS. Do not introduce a framework or build system.
